@@ -39,6 +39,16 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/mars.png
+    - assets/images/neptune.png
+    - assets/images/moon.png
+    - assets/images/earth.png
+    - assets/images/mercury.png
+    - assets/images/venus.png
+    - assets/images/jupiter.png
+    - assets/images/saturn.png
+    - assets/images/uranus.png
+    - assets/images/ic_distance.png
+    - assets/images/ic_gravity.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
@@ -56,6 +66,8 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-SemiBold.ttf
           weight: 600
+        - asset: assets/fonts/Poppins-Regular.ttf
+          weight: 400
     - family: Montserrat
       fonts:
         - asset: assets/fonts/Montserrat-SemiBold.ttf
