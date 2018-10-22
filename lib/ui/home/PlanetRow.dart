@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:planets/model/Planet.dart';
 import 'package:planets/ui/MyTextStyle.dart';
+import 'package:planets/ui/detail/DetailPage.dart';
+import 'package:planets/ui/SlideLeftRoute.dart';
 
 class PlanetRow extends StatelessWidget {
   final Planet planet;
@@ -12,10 +14,13 @@ class PlanetRow extends StatelessWidget {
     final planetThumbnail = Container(
       margin: EdgeInsets.symmetric(vertical: 16.0),
       alignment: FractionalOffset.centerLeft,
-      child: Image(
-        image: AssetImage(planet.image),
-        height: 92.0,
-        width: 92.0,
+      child: Hero(
+        tag: 'planet-hero-${planet.id}',
+        child: Image(
+          image: AssetImage(planet.image),
+          height: 92.0,
+          width: 92.0,
+        ),
       ),
     );
 
@@ -67,11 +72,14 @@ class PlanetRow extends StatelessWidget {
       child: planetCardContent,
     );
 
-    return Container(
-      height: 120.0,
-      margin: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-      child: Stack(
-        children: <Widget>[planetCard, planetThumbnail],
+    return GestureDetector(
+      onTap: () => Navigator.of(context).push(SlideLeftRoute(DetailPage(planet))),
+      child: Container(
+        height: 120.0,
+        margin: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+        child: Stack(
+          children: <Widget>[planetCard, planetThumbnail],
+        ),
       ),
     );
   }
