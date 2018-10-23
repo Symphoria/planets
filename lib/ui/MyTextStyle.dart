@@ -12,5 +12,5 @@ class MyTextStyle {
     fontSize: 9.0,
     fontWeight: FontWeight.w400
   );
-  static final subHeaderTextStyle = regularTextStyle.copyWith(fontSize: 13.0);
+  static final subHeaderTextStyle = regularTextStyle.copyWith(fontSize: 14.0);
 }

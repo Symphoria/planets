@@ -7,7 +7,7 @@ class HomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        color: Color(0xFF736AB7),
+        color: Color(0xFF2f2f66),
         child: CustomScrollView(
           scrollDirection: Axis.vertical,
           slivers: <Widget>[

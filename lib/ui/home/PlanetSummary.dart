@@ -50,11 +50,13 @@ class PlanetSummary extends StatelessWidget {
           Text(planet.title, style: MyTextStyle.subHeaderTextStyle),
           Separator(),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Expanded(
                 flex: horizontal ? 1 : 0,
                 child: _planetValue(value: planet.distance, image: 'assets/images/ic_distance.png')
               ),
+              Container(width: 32.0),
               Expanded(
                 flex: horizontal ? 1 : 0,
                 child: _planetValue(value: planet.gravity, image: 'assets/images/ic_gravity.png')
@@ -69,7 +71,7 @@ class PlanetSummary extends StatelessWidget {
       height: horizontal ? 124.0 : 154.0,
       margin: horizontal ? new EdgeInsets.only(left: 46.0) : new EdgeInsets.only(top: 72.0),
       decoration: BoxDecoration(
-        color: Color(0xFF333366),
+        color: Color(0xFF3c3c84),
         shape: BoxShape.rectangle,
         borderRadius: BorderRadius.circular(8.0),
         boxShadow: <BoxShadow>[BoxShadow(color: Colors.black12, blurRadius: 10.0, offset: Offset(0.0, 10.0))]

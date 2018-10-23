@@ -22,7 +22,7 @@ class DetailPage extends StatelessWidget {
       height: 110.0,
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          colors: <Color>[Color(0x00736AB7), Color(0xFF736AB7)],
+          colors: <Color>[Color(0x00736AB7), Color(0xFF2f2f66)],
           stops: [0.0, 0.9],
           begin: FractionalOffset(0.0, 0.0),
           end: FractionalOffset(0.0, 1.0)
@@ -45,7 +45,7 @@ class DetailPage extends StatelessWidget {
             children: <Widget>[
               Text(_overViewTitle, style: MyTextStyle.headerTextStyle),
               Separator(),
-              Text(planet.description, style: MyTextStyle.regularTextStyle)
+              Text(planet.description, style: MyTextStyle.subHeaderTextStyle.copyWith(color: Color.fromARGB(140, 255, 255, 255)))
             ],
           ),
         )
@@ -55,12 +55,22 @@ class DetailPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Color(0xFF736AB7),
-        constraints: BoxConstraints.expand(),
-        child: Stack(
-          children: <Widget>[_getBackground(), _getGradient(), _getContent()],
+    Container _getToolbar() {
+      return Container(
+        margin: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+        child: BackButton(color: Colors.white),
+      );
+    }
+
+    return GestureDetector(
+      onHorizontalDragStart: (_) => Navigator.pop(context),
+      child: Scaffold(
+        body: Container(
+          color: Color(0xFF2f2f66),
+          constraints: BoxConstraints.expand(),
+          child: Stack(
+            children: <Widget>[_getBackground(), _getGradient(), _getContent(), _getToolbar()],
+          ),
         ),
       ),
     );
